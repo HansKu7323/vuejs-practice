@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <h3>遊戲列表</h3>
+    <div id="myApp">
+        <ol>
+            <game-item v-for="item in games" v-bind:game="item"></game-item>
+        </ol>
+    </div>  
+    
+    <script>
+
+        Vue.component('game-item',{
+            props:['game'],
+            template:'<li>{{game.title}}</li>'
+        });
+
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                games:[
+                    {title:'勇者鬥惡龍'},
+                    {title:'超級馬利歐'},
+                    {title:'我的世界'}
+                ]
+            }
+        });
+
+
+    </script>
+    
+  
+    
+</body>
+</html>
