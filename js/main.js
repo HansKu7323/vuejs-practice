@@ -1,9 +1,14 @@
 
 // alert('hello')
 
-new Vue({
+var vm =new Vue({
     el:'#box',
     data:{
-        myname:'david'
+       isActive:true
+    },
+    methods:{
+        handleClick(){
+            this.isActive = !this.isActive
+        }
     }
 });

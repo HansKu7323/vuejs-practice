@@ -5,23 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <link rel="stylesheet" href="css/style.css">
+   
 </head>
 <body>
 
     <div id="box">
-        {{10+20}}
-        <p>{{ myname }}</p>
-    </div>
-
-    <div>
-        {{10+20}}
-    </div>
-    
-
+        <button @click="handleClick()">click</button>
+        <div :class="isActive?'red':'yellow'">我是動態綁定class-三目寫法</div>
+    </div>  
     
   
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    
     <script src="js/main.js"></script>
     
 </body>
