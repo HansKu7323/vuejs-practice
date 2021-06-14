@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <div id="myApp">
+        <p>{{message}}</p>
+        <p>{{message | toupper}}</p>
+        <hr>
+        <p>現在的vue.js學習進度是{{num}}({{num | topercentage}})</p>     
+    </div>
+  
+    <script>
+        var myApp = new Vue({
+            el: '#myApp',
+            data:{
+                message: 'hello vue.js world',
+                num: 0.3
+            },
+            filters:{
+                toupper: function(value){
+                    return value.toUpperCase();
+                },
+                topercentage: function(value){
+                    return value * 100 + '%'
+                },
+            },
+        });
+
+
+    </script>
+    
+  
+    
+</body>
+</html>
