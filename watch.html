@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <p>今年3月3日發賣的任天堂switch的價格是：{{price}}円、含稅價格為：{{priceIntax}}円、折合台幣為：{{priceNTD}}</p>
+        <button　@click="btnclick(10000)">加價10000円</button>
+    </div>  
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                price: 0,
+                priceIntax: 0,
+                priceNTD: 0,
+            },
+            watch:{
+                price: function(newVal, oldVal){
+                    console.log(newVal, oldVal);
+                    this.priceIntax = Math.round(this.price * 1.08);
+                    this.priceNTD = Math.round(this.priceIntax / 3);
+                },
+            },
+            methods:{
+                btnclick: function(newPrice){
+                    this.price  += newPrice;
+                },
+            },
+        });
+        myApp.price = 29980
+    </script>
+    
+</body>
+</html>
