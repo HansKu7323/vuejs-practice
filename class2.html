@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <style>
+        .active{color:red}
+        .big{
+            font-weight: bolder;
+            font-size: 64px;
+        }
+    </style>
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <div :class="myClass">red text</div>
+        <button @click="btnClick">change class</button>
+    </div>  
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                myClass: {
+                    active: true,
+                    big: true,
+                },
+            },
+            methods: {
+                btnClick: function(){
+                    // this.isActive = false
+                    // this.myClass.big = false;
+                    this.myClass.active = !this.myClass.active;
+                    this.myClass.big = !this.myClass.big;
+                },
+            },
+        });
+
+    </script>
+    
+    
+</body>
+</html>
