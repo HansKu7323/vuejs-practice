@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <ul>
+            <li v-for="(game, index) in games">({{index + 1}}) {{game.title}} / price:{{game.price}}</li>
+        </ul>
+    </div>  
+    
+  
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                games: [
+                    {title:"勇者鬥惡龍",price:400},
+                    {title:"卡丁車",price:500},
+                    {title:"馬麗歐",price:600},
+                ]
+            },
+        });
+
+    </script>
+    
+</body>
+</html>
