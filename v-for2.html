@@ -10,24 +10,26 @@
    
 </head>
 <body>
-
     <div id="myApp">
-        <ul>
-            <li v-for="(game, index) in games">({{index + 1}}) {{game.title}} / price:{{game.price}}</li>
-        </ul>
+        <h1>JS對象疊代</h1>
+        <div v-for="(value, key) in mygames">
+            {{key}} : {{value}}
+        </div>
     </div>  
     
   
     
     <script>
-        var myApp = new Vue({
+            var myApp = new Vue({
             el:'#myApp',
             data:{
-                games: [
-                    {title:"勇者鬥惡龍",price:400},
-                    {title:"卡丁車",price:500},
-                    {title:"馬麗歐",price:600},
-                ]
+                mygames: {
+                    title:"勇者鬥惡龍",
+                    price:500,
+                    pubdate:"2017summer",
+                    category:"射擊",
+                    agerange:"全年齡",
+                },
             },
         });
 
