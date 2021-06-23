@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <h1>表單復選框</h1>
+        <input type="checkbox" id="超級馬利歐" value="超級馬利歐" v-model="checkedGame">
+        <label for="超級馬利歐">超級馬利歐</label>
+        <input type="checkbox" id="跑跑卡丁車" value="跑跑卡丁車" v-model="checkedGame">
+        <label for="跑跑卡丁車">跑跑卡丁車</label>
+        <input type="checkbox" id="炸彈超人" value="炸彈超人" v-model="checkedGame">
+        <label for="炸彈超人">炸彈超人</label>
+        
+        <p>你選擇的遊戲是:{{checkedGame}}</p>
+    </div>  
+    
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                checkedGame:[]
+            },
+        });
+
+    </script>
+    
+</body>
+</html>
