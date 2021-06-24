@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <h1>表單單選按紐</h1>
+        <h3>性別選擇</h3>
+        <input type="radio" id="male" value="男" v-model="pickedSex">
+        <label for="male">男</label>
+        <br>
+        <input type="radio" id="female" value="女" v-model="pickedSex">
+        <label for="female">女</label>
+
+        <h3>愛好選擇</h3>
+        <input type="radio" id="game" value="玩遊戲" v-model="pickedHobby">
+        <label for="game">玩遊戲</label>
+        <input type="radio" id="movie" value="看電影" v-model="pickedHobby">
+        <label for="movie">看電影</label>
+       
+        <h3>選擇結果</h3>
+        <p>性別:{{pickedSex}}</p>
+        <p>愛好:{{pickedHobby}}</p>
+    </div>  
+    
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                pickedSex:"",
+                pickedHobby:"",
+            },
+        });
+
+    </script>
+    
+</body>
+</html>
