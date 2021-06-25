@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <h3>你最喜歡的NBA球是</h3>
+        <select v-model="likedNBAStar" style="width:210px">
+            <!-- <option value="科比">你最喜歡的NBA球是</option> -->
+            <option value="科比">科比</option>
+            <option value="詹姆斯">詹姆斯</option>
+            <option value="哈登">哈登</option>
+            <option value="科瑞">科瑞</option>
+            <option value="杜蘭特">杜蘭特</option>
+        </select>
+
+        <h3>你的全明星球員</h3>
+        <select v-model="likedNBAStars" multiple style="width:210px;height:210px">
+            <!-- <option value="">你的全明星球員</option> -->
+            <option>湯普森</option>
+            <option>戴維斯</option>
+            <option>格里芬</option>
+            <option>詹姆斯</option>
+            <option>杜蘭特</option>
+            <option>巴特勒</option>
+            <option>哈登</option>
+            <option>科比</option>
+            <option>羅納度</option>
+            <option>歐文</option>
+            <option>保羅</option>
+            <option>科瑞</option>
+        </select>
+
+        <h3>選擇結果</h3>
+        <p>你最喜歡的球星:{{likedNBAStar}}</p>
+        <p>你的全明星球星:{{likedNBAStars}}</p>
+    </div>  
+    
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                likedNBAStar:null,
+                likedNBAStars:[],
+            },
+        });
+
+    </script>
+    
+</body>
+</html>
