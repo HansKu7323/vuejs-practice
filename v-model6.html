@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <h1>用戶註冊</h1>
+
+        <div>
+            <label for="username">用戶:</label>
+            <input type="text" name="" id="username" v-model.lazy="username" @change="checkUsername">
+            <span v-if="checkUsernameOK">可註冊</span>
+        </div>
+
+        <div>
+            <label for="age">年齡:</label>
+            <input type="number" name="" id="age" v-model.number="age">
+        </div>
+
+        <div>
+            <label for="content">個人簡介:</label>
+            <textarea name="" id="content" v-model.trim="content" cols="55" rows="8"></textarea>
+        </div>
+
+        <h4>信息區</h4>
+        <p>{{username}}</p>
+        <p>{{age}}</p>
+        <p><pre>{{content}}</pre></p>   
+    </div>  
+    
+    
+    <script>
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+               username:"",
+               checkUsernameOK:false,
+               age:"",
+               content:""
+            },
+            methods:{
+                checkUsername: function(){
+                    if (this.username.length > 0) this.checkUsernameOK = true;
+                    else this.checkUsernameOK = false;
+                },
+            },
+        });
+
+    </script>
+    
+</body>
+</html>
