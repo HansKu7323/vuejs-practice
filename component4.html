@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <div id="myApp">
+       <h1>2021最新發表遊戲</h1>
+       <table border="1">
+            <tr>
+                <td>編號</td>
+                <td>遊戲名稱</td>
+            </tr>
+            <tr is="my-row1"></tr>
+            <tr is="my-row2"></tr>
+            <tr is="my-row3"></tr>
+
+            <!-- <my-row1></my-row1>
+            <my-row2></my-row2>
+            <my-row3></my-row3> -->
+       </table>
+    </div>  
+    
+    <script>
+        Vue.component('my-row1',{
+            template:'<tr><td>1</td><td>塞爾遠傳說</td></tr>'
+        });
+        Vue.component('my-row2',{
+            template:'<tr><td>2</td><td>新馬利歐塞車</td></tr>' 
+        });
+        Vue.component('my-row3',{
+            template:'<tr><td>3</td><td>烏賊娘傳奇</td></tr>'
+        });
+
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{},
+        });
+
+
+    </script>
+    
+  
+    
+</body>
+</html>
