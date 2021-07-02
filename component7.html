@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+       <div>請輸入您的名字:<input v-model="myname"></div>
+        <hr>
+        <say-hello :pname="myname"/>
+    </div>  
+    
+    
+    <script>
+        Vue.component('say-hello',{
+            props: ['pname'],
+            template: '<div>您好<strong>{{pname}}</strong></div>',
+        });
+        var myApp = new Vue({
+            el:'#myApp',
+            data:{
+                myname:'Hans'
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
