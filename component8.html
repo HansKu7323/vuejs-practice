@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+
+    <div id="myApp">
+        <h1>個人簡介</h1>
+        <show-member-info name="Hans" :age="250" :detail="{address:'Taiwan', language:'chinese'}"></show-member-info>
+    </div>  
+    
+    <script>
+        Vue.component('show-member-info',{
+            props:{
+                name:{
+                    type: String,
+                    required: true,
+                },
+                age:{
+                    type: Number,
+                    validator: function(value){
+                        return value >= 0 && value <= 130;
+                    }
+                },
+                detail:{
+                    type:Object,
+                    default: function(){
+                        return{
+                            address: 'us',
+                            language: 'English',
+                        };
+                    }
+                },
+            },
+            template:'<div>姓名:{{this.name}}<br/>'
+                + '年齡:{{this.age}}歲<br/>'
+                +'地址:{{this.detail.address}}<br/>'
+                +'語言:{{this.detail.language}}</div>',
+        });
+
+        var myApp = new Vue({
+            el:'#myApp',
+        })
+
+    </script>
+    
+</body>
+</html>
