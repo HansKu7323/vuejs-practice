@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vuejs practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <div id="myApp">
+        <nba-all-star c="歐尼爾" pf="加奈特">
+            <span slot="sf">皮爾斯</span>
+            <span slot="sg">雷納德</span>
+            <span slot="pg">咖哩</span>
+        </nba-all-star>
+    </div>  
+    
+    <script>
+
+        Vue.component('nba-all-star',{
+            props: ['c','pf'],
+            template: '<div>'
+                +'<div>中鋒：{{c}}</div>'
+                +'<div>大前鋒：{{pf}}</div>'
+                +'<div>小前鋒：<slot name="sf"></slot></div>'
+                +'<div>得分後衛：<slot name="sg"></slot></div>'
+                +'<div>控球後衛：<slot name="pg"></slot></div>'
+                +'</div>',
+        });
+     
+
+        var myApp = new Vue({
+            el:'#myApp',
+        });
+
+
+    </script>
+    
+  
+    
+</body>
+</html>
